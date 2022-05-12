@@ -1,0 +1,315 @@
+.utama{
+	color: #1E2F68;
+}
+
+.text-utama{
+	color: #3451B0;
+}
+
+.sekunder{
+	color: #6DC4DB;
+}
+
+.navbar-utama{
+	color: #1E2F68;
+	font-weight: bold;
+}
+
+.custom-toggler.navbar-toggler {
+	border-color: #1E2F68;
+}
+
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(30, 47, 104, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-utama .nav-link{
+	color: #1E2F68;
+	font-weight: bold;
+}
+
+
+.navbar-utama .nav-link:hover{
+	color: #3A5CCF;
+	font-weight: bold;
+}
+
+.navbar-utama .navbar-brand{
+	color: #1E2F68;
+	font-weight: bold;
+}
+
+.navbar-utama .navbar-logo{
+	width: 50px;
+}
+
+.btn-primary{
+	color: white;
+	background-color: #1E2F68;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 15px;
+	font-weight: bold;
+	transition-duration: 0.3s;
+}
+
+.btn-primary:hover{
+	color: white;
+	background-color: #121A36;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 15px;
+	font-weight: bold;
+	transition-duration: 0.3s;
+}
+
+.btn-primary-outline{
+	color: #1E2F68;
+	background-color: #fff;
+	border: 2px solid #1E2F68;
+	border-radius: 15px;
+	font-weight: bold;
+	transition-duration: 0.3s;
+}
+
+.btn-primary-outline:hover{
+	color: white;
+	background-color: #1E2F68;
+	transition-duration: 0.3s;
+
+}
+.btn-sekunder{
+	color: white;
+	background-color: #6DC4DB;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 15px;
+	font-weight: bold;
+}
+
+.bg-utama{
+	background-color: #1E2F68;
+}
+
+.bg-sekunder{
+	background-color: #6DC4DB;
+}
+
+.bg-sekunder-2{
+	background-color: #C2F2FF;
+}
+
+.header-logo{
+	width: 500px;
+}
+
+.title{
+	font-weight: bold;
+	font-size: 80px;
+}
+
+.subtitle{
+	font-weight: bold;
+	font-size: 40px;
+}
+
+#Layanan .card{
+	border: 0;
+	transition: .5s transform cubic-bezier(.155,1.105,.295,1.12),.5s box-shadow,.5s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+	padding: 14px 80px 18px 36px;
+	cursor: pointer;
+}
+
+#Layanan .card:hover{
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card .logo{
+	width: 200px;
+}
+
+#About .logo{
+	width: 200px;
+}
+
+#About .card-footer{
+	background-color: #fff;
+	border: 0;
+}
+
+footer .footer-icon{
+	font-size: 25px;
+}
+
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #DDF8FF;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th {
+	background-color: white;
+}
+
+#Donasi .avatar{
+	width: 100px;
+	height: 100px;
+	background-color: #444;
+	border-radius: 50px;
+}
+
+.segera-lokasi{
+	font-size: 12px;
+	color: #777;
+}
+
+a.icon-utama{
+	color: #1E2F68;
+
+}
+
+a.icon-utama:hover{
+	color: #6DC4DB;
+	transition-duration: 0.5s;
+}
+
+a.back-link{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 40px;
+	color: black;
+	transition-duration: 0.5s;
+}
+
+a.back-link:hover{	
+	color: blue;
+	transition-duration: 0.5s;
+}
+
+
+/* LOGIN FORM */
+#Login .card {
+	width: 600px;
+	border: none;
+	background-color: #6DC4DB;
+}
+
+#Login .btr {
+	border-top-right-radius: 5px !important
+}
+
+#Login .btl {
+	border-top-left-radius: 5px !important
+}
+
+#Login .btn-dark {
+	color: #fff;
+	background-color: #0d6efd;
+	border-color: #0d6efd
+}
+
+#Login .btn-dark:hover {
+	color: #fff;
+	background-color: #0d6efd;
+	border-color: #0d6efd
+}
+
+#Login .nav-pills {
+	display: table !important;
+	width: 100%
+}
+
+#Login .nav-pills .nav-link {
+	border-radius: 0px;
+	border: 2px solid #6DC4DB;
+
+}
+
+#Login .nav-item {
+	display: table-cell;
+
+}
+
+#Login .nav-link{
+	color: #1E2F68;
+	font-weight: bold;
+	background-color: #fff;
+
+}
+#Login .nav-link:hover{
+	color: #fff;
+	background-color: #6DC4DB;
+}
+
+#Login .form {
+	padding: 10px;
+	height: 300px;
+	color: #1E2F68;
+	font-weight: bold;
+}
+
+#Login .form input {
+	margin-bottom: 12px;
+	border-radius: 3px
+}
+
+#Login .form input:focus {
+	box-shadow: none
+}
+
+#Login .form button {
+	margin-top: 20px
+}
+
+#Login .form .form-control{
+	border-radius: 10px;
+}
+
+#Login .active{
+	background-color: #6DC4DB;
+
+}
+
+#Login .card .tab-content .active{
+	min-height: 300px;
+}
+
+#Login .nostyle{
+	text-decoration: none;
+	color: #1E2F68;
+}
+
+
+.row-rounded{
+	border-radius: 10px;
+}
+
+.gambar-donasi{
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+}
+
+#DetailDonasi .avatar{
+	width: 80px;
+	height: 80px;
+	background-color: #444;
+	border-radius: 50px;
+}
+
+#FormDonasi input[readonly]{
+	background-color: #C2F2FF;
+}
+
+/* REGIS FORM */
+#register .card{
+	background-color: #6DC4DB;
+	color: #1E2F68;
+	padding: 0px 30px 0px 30px;
+	border-radius: 20px;
+	font-weight: bold;
+}
+
+#register .form input{
+	border-radius: 5px
+}

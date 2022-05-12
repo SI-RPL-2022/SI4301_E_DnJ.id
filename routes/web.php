@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+// Donasi
+
+Route::resource('/donasi', donasiController::class);
+Route::get('/riwayat', 'donasiController@riwayat');
+Route::get('/donasi/berdonasi/{donasi}', 'donasiController@berdonasi');
+Route::get('/register', 'LoginController@indexReg')->name('register');
+Route::post('/register', 'LoginController@storeReg');
+Route::get('/login', 'LoginController@index')->name('login');
+Route::post('/login', 'LoginController@loginpersonal');
+Route::post('/loginorganizational', 'LoginController@loginorganizational');
+Route::post('/logout', 'LoginController@logout')->name('logout');
+
+Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
+
+
+// Route::get('/login', [LoginController::class, 'index']);
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
