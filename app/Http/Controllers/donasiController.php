@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Donations;
 use App\Models\pembayaran;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class donasiController extends Controller
 {
