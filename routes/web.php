@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,13 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 
 Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
 
+Route::group(['prefix' => 'admin'], function(){
+
+    Route::get('/dashboard', function(){
+        return view('admin.dashboard');
+    });
+
+});
 
 // Route::get('/login', [LoginController::class, 'index']);
 
