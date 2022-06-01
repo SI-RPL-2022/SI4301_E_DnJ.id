@@ -41,8 +41,6 @@
 
     public function loginpersonal(Request $request)
     {
-        $data = User::where('email',$request->email)->firstOrFail();
-        if ($data->roles == 'Personal User'){
             $credentials = $request->validate([
                 'email' => ['required', 'email'],
                 'password' => ['required'],
@@ -52,9 +50,12 @@
                 $request->session()->regenerate();
                 
                 session(['login' => true]);
+                
+                if (auth()->user()->roles == 'Admin') {
+                    return redirect()->intended('/admin/dashboard');
+                }
                 return redirect()->intended('/')->with('berhasil_login','Login Berhasil!');
-            }
-        }else{
+            }else{
             return redirect('/login')->with('gagal_login','Email atau Password Salah!');
         }
 

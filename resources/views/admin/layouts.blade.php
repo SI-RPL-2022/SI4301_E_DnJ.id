@@ -34,7 +34,7 @@
                         <img src="{{ asset('asset/Logo/account.png') }}" alt="" class="logo-admin">
                         <h5 class="display-6 text-light">Hi, Admin</h5>
                     </div>
-                    <div class="sidebar-menu px-3 fs-4 sekunder">
+                    <div class="sidebar-menu px-3 fs-4 sekunder mb-5">
                         <ul class="list-unstyled">
                             <li><a href="/admin/dashboard" class="sidebar-link">Dashboard</a></li>
                             <li>Donasi
@@ -51,11 +51,18 @@
                             </li>
                             <li>Pelatihan
                                 <ul class="list-unstyled ps-4 fs-6">
-                                    <li>Daftar Peltahian</li>
+                                    <li><a href="/admin/pelatihan" class="sidebar-link">Daftar Pelatihan</a></li>
                                     <li>Mitra Peltahian</li>
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+                    <div class="text-center">
+                        <form action="/logout" method="POST">
+                            @csrf
+
+                            <button type="submit" class="btn btn-sekunder">Logout</button>
+                        </form>
                     </div>
                 </div>
             </div>
