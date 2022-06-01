@@ -10,6 +10,11 @@
 	color: #6DC4DB;
 }
 
+.form-control{
+	background-color: #C2F2FF;
+	border: none;
+}
+
 .navbar-utama {
 	color: #1E2F68;
 	font-weight: bold;
@@ -43,14 +48,18 @@
 	width: 50px;
 }
 
+.btn{
+	border-radius: 15px;
+	font-weight: bold;
+	transition-duration: 0.3s;
+}
+
 .btn-primary {
 	color: white;
 	background-color: #1E2F68;
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius: 15px;
-	font-weight: bold;
-	transition-duration: 0.3s;
 }
 
 .btn-primary:hover {
@@ -325,20 +334,22 @@ a.back-link:hover {
 
 #Admin .sidebar {
 	background-color: #1E2F68;
+	position: sticky;
 
 }
 
 
-#Admin .logo-admin{
+#Admin .logo-admin {
 	width: 100px;
 	border-radius: 50%;
 }
 
-#Admin .sidebar-link{
+#Admin .sidebar-link {
 	text-decoration: none;
 	color: #6DC4DB;
 }
 
-#Admin .sidebar-link:hover{
+#Admin .sidebar-link:hover {
 	color: #fff;
 }
+
