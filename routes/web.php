@@ -34,7 +34,7 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 
 Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
 
     Route::get('/dashboard', function(){return view('admin.dashboard');});
     Route::get('/pelatihan', [PelatihanController::class, 'daftar']);
