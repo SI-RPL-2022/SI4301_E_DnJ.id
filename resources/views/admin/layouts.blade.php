@@ -45,7 +45,7 @@
                             </li>
                             <li>Pekerjaan
                                 <ul class="list-unstyled ps-4 fs-6">
-                                    <li>Daftar Pekerjaan</li>
+                                    <li><a href="/admin/pekerjaan" class="sidebar-link">Daftar Pekerjaan</a></li>
                                     <li>Mitra Pekerjaan</li>
                                 </ul>
                             </li>

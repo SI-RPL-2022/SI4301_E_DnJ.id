@@ -14,7 +14,8 @@ class PelatihanController extends Controller
      */
     public function index()
     {
-        
+        $pelatihan = Pelatihan::all();
+        return view('pelatihan.view_pelatihan',compact('pelatihan'));
     }
 
     public function daftar()
@@ -42,7 +43,7 @@ class PelatihanController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'contact'=> 'required|numeric'
+            'contact'=> ['required','numeric']
         ]);
 
         // Aku mager pake validate hehe 
@@ -80,7 +81,8 @@ class PelatihanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pelatihan = Pelatihan::find($id);
+        return view('pelatihan.detail_pelatihan',compact('pelatihan'));
     }
 
     /**
@@ -91,7 +93,8 @@ class PelatihanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pelatihan = Pelatihan::find($id);
+        return view('admin.edit_data_pelatihan',compact('pelatihan'));
     }
 
     /**
@@ -103,7 +106,19 @@ class PelatihanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Pelatihan::find($id)->update([
+            'nama_pelatihan' => $request->nama,
+            'tanggal_start' => $request->tanggal_start,
+            'tanggal_end' => $request->tanggal_start,
+            'batas_daftar' => $request->tanggal_start,
+            'penyelenggara' => $request->penyelenggara,
+            'deskripsi' => $request->deskripsi,
+            'tipe' => $request->tipe,
+            'link' => $request->link,
+            'alamat' => $request->alamat,
+            'contact' => $request->contact
+        ]);
+        return redirect('/admin/pelatihan');
     }
 
     /**
@@ -114,6 +129,7 @@ class PelatihanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pelatihan::find($id)->delete();
+        return redirect('/admin/pelatihan');
     }
 }

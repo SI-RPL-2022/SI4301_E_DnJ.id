@@ -329,8 +329,24 @@ a.back-link:hover {
 
 
 
-/* Admin CSS styling */
 
+.card-menu{
+	border: none;
+	background-color: #6DC4DB;
+	border-radius: 10px;
+}
+
+.detail-logo{
+	width: 200px;
+}
+
+
+.text-justify{
+	text-align: justify;
+}
+
+
+/* Admin CSS styling */
 
 #Admin .sidebar {
 	background-color: #1E2F68;
@@ -351,5 +367,45 @@ a.back-link:hover {
 
 #Admin .sidebar-link:hover {
 	color: #fff;
+}
+
+#profil .container{
+	background-color: #6DC4DB;
+	margin-top:5rem;
+	border-radius: 10px;
+	padding: 3rem 5rem 3rem 5rem;
+}
+#profil .rounded-profil{
+	border-radius: 300px;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    width: 250px;
+    height: 250px;
+}
+#profil .title{
+	color:#1E2F68;
+	font-size: 20px;
+	line-height: 5px;
+}
+
+#Updateprofil .container{
+	background-color: #6DC4DB;
+	margin-top:5rem;
+	border-radius: 10px;
+	padding: 3rem 5rem 3rem 5rem;
+}
+#Updateprofil .rounded-profil{
+	border-radius: 300px;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    width: 250px;
+    height: 250px;
+}
+#Updateprofil .title{
+	color:#1E2F68;
+	font-size: 20px;
+}
+#Updateprofil .btn-primary{
+	margin-top:1rem;
 }
 

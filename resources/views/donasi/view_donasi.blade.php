@@ -49,8 +49,6 @@
 						</td>
 					</tr>
 					@endforeach
-					@else
-					<a href="/donasi/create" class="btn btn-sekunder mb-4 ms-4"><h4>Buat Donasi</h4></a>
 					@endif
 				</table>
 			</div>
