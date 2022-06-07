@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <a href="#" class="btn btn-primary fs-2">Apply Sekarang</a>
+                    <a href="{{$pekerjaan->link_daftar}}" target="_blank" class="btn btn-primary fs-2">Apply Sekarang</a>
                 </div>
             </div>
         </div>

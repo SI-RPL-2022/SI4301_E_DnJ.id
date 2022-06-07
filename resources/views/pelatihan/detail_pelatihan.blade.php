@@ -49,7 +49,7 @@
 
 
                 <div class="mb-3">
-                    <a href="#" class="btn btn-primary fs-2">Daftar Sekarang</a>
+                    <a href="{{$pelatihan->link_daftar}}" target="_blank" class="btn btn-primary fs-2">Daftar Sekarang</a>
                 </div>
             </div>
         </div>

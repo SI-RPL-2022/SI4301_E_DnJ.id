@@ -39,7 +39,7 @@
 								<div class="col-md-6">
 									<h4 class="fw-bold">{{ $d -> nama_donasi }}</h4>
 									<p class="utama mb-0"><i class="bi bi-pin-map-fill pe-3"></i>{{ $d -> lokasi }}</p>
-									<p class="utama mb-0"><i class="bi bi-person-fill pe-3"></i>{{ $d-> nama_penggalang}}</p>
+									<p class="utama mb-0"><i class="bi bi-person-fill pe-3"></i>{{ $d->user->name}}</p>
 								</div>
 								<div class="col-md-4 text-end">
 									<h4 class="fw-bold utama mb-4">Rp {{$d -> target_donasi}}</h4>

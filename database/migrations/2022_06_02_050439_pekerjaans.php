@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('tipe');
             $table->string('kualifikasi')->nullable();
             $table->string('alamat_perusahaan')->nullable();
-            $table->integer('contact');
+            $table->BigInteger('contact');
+            $table->string('link_daftar');
             $table->timestamps();
         });
     }

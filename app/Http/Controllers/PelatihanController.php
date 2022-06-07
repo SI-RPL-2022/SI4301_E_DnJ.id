@@ -65,6 +65,7 @@ class PelatihanController extends Controller
         }
 
         $pelatihan->contact = $request->contact;
+        $pelatihan->link_daftar = $request->link_daftar;
 
         $pelatihan->save();
 

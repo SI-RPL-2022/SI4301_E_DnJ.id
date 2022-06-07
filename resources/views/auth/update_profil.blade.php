@@ -25,7 +25,7 @@
                     <p class="title">Nomor Handphone</p>
                     <input type="numeric" class="form-control" id="no_hp" name="no_hp" value="{{Auth::user()->no_hp}}">
                     <p class="title">Password</p>
-                    <input type="password" class="form-control" id="pass" name="password">
+                    <input type="password" class="form-control" id="password" name="password">
                     <button class="btn btn-primary" type="submit">Edit</button>
                 </form>
             </div>

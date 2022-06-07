@@ -27,19 +27,21 @@ Route::get('/', function () {
 Route::get('/profil', [UserController::class, 'index']);
 Route::get('/profil/update', [UserController::class, 'edit']);
 Route::put('/profil/update/{id}', [UserController::class, 'update']);
-// Donasi
-
-Route::resource('/donasi', donasiController::class);
-Route::get('/riwayat', 'donasiController@riwayat');
-Route::get('/donasi/berdonasi/{donasi}', 'donasiController@berdonasi');
 Route::get('/register', 'LoginController@indexReg')->name('register')->middleware('guest');
 Route::post('/register', 'LoginController@storeReg');
 Route::get('/login', 'LoginController@index')->name('login')->middleware('guest');
 Route::post('/login', 'LoginController@loginpersonal');
 Route::post('/loginorganizational', 'LoginController@loginorganizational');
 Route::post('/logout', 'LoginController@logout')->name('logout');
+// Donasi
 
+Route::resource('/donasi', donasiController::class);
+Route::get('/riwayat', 'donasiController@riwayat');
+Route::get('/donasi/berdonasi/{donasi}', 'donasiController@berdonasi');
 Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
+Route::get('/donasi/detail/{donasi}', 'donasiController@detailBerdonasi');
+Route::get('donasi/pembayaran/{donasi}', 'donasiController@pembayaran');
+Route::put('/pembayaran/{donasi}', 'donasiController@updatePembayaran');
 
 //Pelatihan User
 

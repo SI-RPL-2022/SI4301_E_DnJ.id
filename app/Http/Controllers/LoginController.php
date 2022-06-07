@@ -40,7 +40,8 @@
 
 
     public function loginpersonal(Request $request)
-    {
+    {   $data = User::where('email',$request->email)->firstOrFail();
+        if ($data->roles == 'Personal User' or $data->roles == 'Admin'){
             $credentials = $request->validate([
                 'email' => ['required', 'email'],
                 'password' => ['required'],
@@ -56,9 +57,11 @@
                 }
                 return redirect()->intended('/')->with('berhasil_login','Login Berhasil!');
             }else{
+                return redirect('/login')->with('gagal_login','Email atau Password Salah!');
+            }
+        }else{
             return redirect('/login')->with('gagal_login','Email atau Password Salah!');
         }
-
     }
 
     public function loginorganizational(Request $request)

@@ -71,7 +71,8 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $credentials = $request->validate([
-            'password' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
         if (Auth::attempt($credentials)) {
             User::find($id)->update([

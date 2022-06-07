@@ -13,7 +13,6 @@ class Donations extends Model
     protected $fillable = [
         'id',
         'id_penggalang', 
-        'nama_penggalang',
         'penerima_donasi',
         'nama_donasi',
         'deskripsi',
@@ -29,7 +28,7 @@ class Donations extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(User::class,'id_penggalang');
     }
     public function bayardonasi()
     {

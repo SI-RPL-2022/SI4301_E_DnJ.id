@@ -26,12 +26,12 @@ class pembayaran extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(User::class,'id_donatur');
     }
 
     public function donasi()
     {
-        return $this->belongsTo(Donations::class,'nama_donasi');
+        return $this->belongsTo(Donations::class,'id_donasi');
     }
 
 

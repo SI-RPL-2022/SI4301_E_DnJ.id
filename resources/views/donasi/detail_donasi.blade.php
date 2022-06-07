@@ -25,7 +25,7 @@
 				</div>
 			</div>
 			<div class="col-md-11 py-3 px-5">
-				<b class="text-utama fw-normal">{{$donasi->nama_penggalang}}</b> <i class="bi bi-patch-check-fill text-success"></i>
+				<b class="text-utama fw-normal">{{$donasi->user->name}}</b> <i class="bi bi-patch-check-fill text-success"></i>
 				<p class="text-muted mb-0 text-sm">Organisasi resmi dari program donasi {{$donasi->nama_donasi}}</p>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 
 		<div class="text-center mb-5">
 			<h1 class="display-1 fw-bold text-utama">Total Donasi</h1>
-			<h2 class="display-4 fw-bold utama">{{$donasi->total_donasi}}</h2>
+			<h2 class="display-4 fw-bold utama">{{$total->count()}}</h2>
 			<h2 class="display-4 fw-bold text-utama">Orang</h2>
 		</div>
 
