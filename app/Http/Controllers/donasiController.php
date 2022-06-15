@@ -161,4 +161,25 @@ class donasiController extends Controller
     {
         //
     }
+
+    public function selesai()
+    {
+        // INI NANTI Diisi Donasi yang udah  beres 
+        return view('donasi.donasi_selesai');
+    }
+
+    public function detail_selesai()
+    {
+        return view('donasi.berhasil_detail');
+    }
+
+    public function transaksi()
+    {
+        return view('donasi.form_transaksi');
+    }
+
+    public function donasi_berhasil()
+    {
+        return view('donasi.donasi_berhasil');
+    }
 }

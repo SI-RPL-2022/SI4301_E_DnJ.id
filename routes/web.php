@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\donasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\PekerjaanController;
@@ -34,6 +35,10 @@ Route::post('/login', 'LoginController@loginpersonal');
 Route::post('/loginorganizational', 'LoginController@loginorganizational');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 // Donasi
+Route::get('/donasi/berhasil', [donasiController::class, 'selesai']);
+Route::get('/donasi/berhasil/detail', [donasiController::class, 'detail_selesai']);
+Route::get('/donasi/berhasil/detail/id/transaksi', [donasiController::class, 'transaksi']);
+Route::get('/donasi/selesai', [donasiController::class, 'donasi_berhasil']);
 
 Route::resource('/donasi', donasiController::class);
 Route::get('/riwayat', 'donasiController@riwayat');
@@ -42,6 +47,7 @@ Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
 Route::get('/donasi/detail/{donasi}', 'donasiController@detailBerdonasi');
 Route::get('donasi/pembayaran/{donasi}', 'donasiController@pembayaran');
 Route::put('/pembayaran/{donasi}', 'donasiController@updatePembayaran');
+
 
 //Pelatihan User
 
@@ -54,9 +60,11 @@ Route::get('/pekerjaan/detail/{id}', [PekerjaanController::class, 'show']);
 
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
-    Route::get('/dashboard', function(){return view('admin.dashboard');});
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    });
 
     // Pelatihan
     Route::get('/pelatihan', [PelatihanController::class, 'daftar']);
@@ -73,7 +81,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::get('/pekerjaan/edit/{id}', [PekerjaanController::class, 'edit']);
     Route::put('/pekerjaan/edit/{id}', [PekerjaanController::class, 'update']);
     Route::delete('/pekerjaan/delete/{id}', [PekerjaanController::class, 'destroy']);
-
 });
 
 // Route::get('/login', [LoginController::class, 'index']);
