@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelatihans', function (Blueprint $table) {
+        Schema::create('pekerjaans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_pelatihan');
+            $table->string('nama_pekerjaan');
             $table->date('tanggal_start');
-            $table->date('tanggal_end');
-            $table->date('batas_daftar');
-            $table->string('tipe');
-            $table->string('penyelenggara');
+            $table->string('perusahaan_perekrut');
             $table->string('deskripsi');
-            $table->string('alamat')->nullable();
-            $table->string('link')->nullable();
+            $table->string('tipe');
+            $table->string('kualifikasi')->nullable();
+            $table->string('alamat_perusahaan')->nullable();
             $table->BigInteger('contact');
             $table->string('link_daftar');
             $table->timestamps();
@@ -37,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelatihans');
+        Schema::dropIfExists('pekerjaans');
     }
 };

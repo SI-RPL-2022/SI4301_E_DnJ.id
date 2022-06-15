@@ -21,8 +21,12 @@
                     <td>{{$data->nama_pelatihan}}</td>
                     <td>{{$data->tanggal_start.' sampai '. $data->tanggal_end}}</td>
                     <td>
-                        <a href="#" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i> Edit</a>
-                        <a href="#" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i> Delete</a>
+                        <form action="/admin/pelatihan/delete/{{$data->id}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <a href="/admin/pelatihan/edit/{{$data->id}}" class="btn btn-outline-primary"><i class="bi bi-pencil-fill"></i> Edit</a>
+                            <button class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i> Delete</button>
+                        </form>
                     </td>
                 @endforeach
             </tr>

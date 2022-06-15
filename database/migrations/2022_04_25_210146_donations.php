@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_penggalang');
             $table->string('nama_donasi');
-            $table->string('nama_penggalang');
             $table->string('penerima_donasi');
             $table->string('deskripsi');
             $table->string('lokasi');
@@ -26,8 +25,8 @@ return new class extends Migration
             $table->string('target_donasi');
             $table->string('foto');
             $table->integer('total_donasi');
-            $table->string('status');
             $table->integer('jumlah_donatur');
+            $table->string('status');
             $table->timestamps();
 
             $table->foreign('id_penggalang')->references('id')->on('users');

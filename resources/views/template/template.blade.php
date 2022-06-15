@@ -46,8 +46,8 @@
                 @else
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="/donasi">Donasi</a>
-                    <a class="nav-link" href="#">Pekerjaan</a>
-                    <a class="nav-link" href="#">Pelatihan</a>
+                    <a class="nav-link" href="/pekerjaan">Pekerjaan</a>
+                    <a class="nav-link" href="/pelatihan">Pelatihan</a>
                 </div>
 
                 <li class="nav-item dropdown" style="list-style:none;">
@@ -57,7 +57,7 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="/profil">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

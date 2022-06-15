@@ -3,7 +3,10 @@
 @section('content')
 <div class="container min-vh-100 py-5">
 	<div class="text-center">
-		<h3 class="utama">Detail Donasi Anda</h3>
+		<h3 class="utama">Selesaikan Pembayaran Anda</h3>
+
+		<h1 id="demo"></h1>
+
 	</div>
 	<div class="shadow p-3 mb-5 bg-body rounded">
 		<p class="text-utama">Mohon selesaikan pembayaran dengan mengikuti petunjuk yang telah dikirimkan. Setelah pembayaran terkonfirmasi, pembelian akan dikirim secepatnya. Terima kasih sudah menggunakan DNJ.id</p>
@@ -13,17 +16,17 @@
 			<tr class="">
 				<td class="pe-5">Program Donasi</td>
 				<td class="px-3">:</td>
-				<td class="ps-2">Donasi {{$donasi->nama_donasi}}</td>
+				<td class="ps-2">Donasi {{$detail->donasi->nama_donasi}}</td>
 			</tr>
 			<tr class="">
 				<td class="pe-5">Nominal</td>
 				<td class="px-3">:</td>
-				<td class="ps-2">Rp {{$nominal}}</td>
+				<td class="ps-2">Rp {{$detail->nominal}}</td>
 			</tr>
 			<tr class="">
 				<td class="pe-5">Metode Pembayaran</td>
 				<td class="px-3">:</td>
-				<td class="ps-2">{{$metode}}</td>
+				<td class="ps-2">{{$detail->metode_pembayaran}}</td>
 			</tr>
 			<tr class="">
 				<td class="pe-5">Kode Transaksi</td>
@@ -33,12 +36,17 @@
 			<tr class="">
 				<td class="pe-5">Status Pembayaran</td>
 				<td class="px-3">:</td>
-				<td class="ps-2">Belum Dibayar</td>
+				<td class="ps-2">{{$detail->status}}</td>
 			</tr>
 		</table>
-		<div class="mb-3 text-end">
-			<a href="/riwayat" class="btn btn-primary">Submit</a>
-		</div>
+        <form action="/pembayaran/{{$detail->id}}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="mb-3 text-end">
+                <button type="reset" class="btn btn-danger">Batal</button>
+                <button type="submit" class="btn btn-primary">Bayar</a>
+            </div>
+        </form>
 	</div>
 </div>
 

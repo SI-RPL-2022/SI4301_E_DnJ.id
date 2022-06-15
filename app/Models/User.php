@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     public function donasi()
     {
-        return $this->hasMany(Donations::class);
+        return $this->hasMany(Donations::class,'id_penggalang');
     }
     public function bayar()
     {
