@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->string('alamat')->nullable();
             $table->string('link')->nullable();
-            $table->integer('contact');
+            $table->bigInteger('contact');
             $table->timestamps();
         });
     }
