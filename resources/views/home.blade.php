@@ -130,7 +130,7 @@
 			<div class="col text-center">
 				<div class="card h-100 border-0">
 					<div class="text-center">
-						<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3 logo">
+						<img src="{{ asset('asset/foto_tim/nita.png'); }}" class="rounded-profil">
 					</div>
 					<div class="card-body">
 						<h4 class="fw-light">Ni Putu Nita Suari</h4>
@@ -143,7 +143,7 @@
 			<div class="col text-center">
 				<div class="card h-100 border-0">
 					<div class="text-center">
-						<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3 logo">
+						<img src="{{ asset('asset/foto_tim/alpin.png'); }}" class="rounded-profil">
 					</div>
 					<div class="card-body">
 						<h4 class="fw-light">Muhammad Dzaki Alfinansyah</h4>
@@ -156,7 +156,7 @@
 			<div class="col text-center">
 				<div class="card h-100 border-0">
 					<div class="text-center">
-						<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3 logo">
+						<img src="{{ asset('asset/foto_tim/her.png'); }}" class="rounded-profil">
 					</div>
 					<div class="card-body">
 						<h4 class="fw-light">Hernanda Eka Prasetyo</h4>
@@ -169,7 +169,7 @@
 			<div class="col text-center">
 				<div class="card h-100 border-0">
 					<div class="text-center">
-						<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3 logo">
+						<img src="{{ asset('asset/foto_tim/rayhan.png'); }}" class="rounded-profil">
 					</div>
 					<div class="card-body">
 						<h4 class="fw-light">Muhammad Rayhan Abdillah</h4>
@@ -182,7 +182,7 @@
 			<div class="col text-center">
 				<div class="card h-100 border-0">
 					<div class="text-center">
-						<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3 logo">
+						<img src="{{ asset('asset/foto_tim/kelvin.png'); }}" class="rounded-profil">
 					</div>
 					<div class="card-body">
 						<h4 class="fw-light">Kelvin Maulana</h4>
