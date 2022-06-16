@@ -18,6 +18,7 @@ class Pekerjaan extends Model
         'tipe',
         'kualifikasi',
         'alamat_perusahaan',
-        'contact'
+        'contact',
+        'link_daftar'
     ];
 }

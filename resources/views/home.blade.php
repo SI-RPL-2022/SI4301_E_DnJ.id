@@ -70,45 +70,45 @@
 	<h2 class="subtitle py-5  utama text-center">Apa Kata Mereka?</h2>
 	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner container">
+			@foreach ($testi as $data => $slide)
+			@if ($data == 0)
 			<div class="carousel-item active">
 				<div class="row">
 					<div class="col-md-4 py-5">
 						<div class="text-center">
+							@if ($slide->user->foto == null)
 							<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3">
-							<h5 class="utama">Anonim</h5>
+							@else
+							<img src="{{ asset('foto_profil/'.$slide->user->foto); }}" class="rounded-profil">
+							@endif
+							<h5 class="utama">{{$slide->user->name}}</h5>
 						</div>
 					</div>
 					<div class="col-md-8 py-5 my-5">
-						<h2 class="utama fw-light">DnJ sangat membantu saya dalam meningkatkan keterampilan dan memudahkan untuk menemukan pekerjaan di masa pandemi ini</h2>
+						<h2 class="utama fw-light">{{$slide->testi}}</h2>
 					</div>
 				</div>
 			</div>
+			@else
 			<div class="carousel-item">
 				<div class="row">
 					<div class="col-md-4 py-5">
 						<div class="text-center">
+							@if ($slide->user->foto == null)
 							<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3">
-							<h5 class="utama">Anonim</h5>
+							@else
+							<img src="{{ asset('foto_profil/'.$slide->user->foto); }}" class="rounded-profil">
+							@endif
+							<h5 class="utama">{{$slide->user->name}}</h5>
 						</div>
 					</div>
 					<div class="col-md-8 py-5 my-5">
-						<h2 class="utama fw-light">DnJ sangat membantu saya dalam meningkatkan keterampilan dan memudahkan untuk menemukan pekerjaan di masa pandemi ini</h2>
+						<h2 class="utama fw-light">{{$slide->testi}}</h2>
 					</div>
 				</div>
 			</div>
-			<div class="carousel-item">
-				<div class="row">
-					<div class="col-md-4 py-5">
-						<div class="text-center">
-							<img src="{{ asset('asset/Logo/default_pic.png'); }}" class="pb-3">
-							<h5 class="utama">Anonim</h5>
-						</div>
-					</div>
-					<div class="col-md-8 py-5 my-5">
-						<h2 class="utama fw-light">DnJ sangat membantu saya dalam meningkatkan keterampilan dan memudahkan untuk menemukan pekerjaan di masa pandemi ini</h2>
-					</div>
-				</div>
-			</div>
+			@endif
+			@endforeach
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>

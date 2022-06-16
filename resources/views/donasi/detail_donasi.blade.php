@@ -14,15 +14,21 @@
 				<h2 class="subtitle">{{$donasi->nama_donasi}}</h2>
 				<p class="text-utama">{{$donasi->deskripsi}}</p>
 				<h2 class="utama mb-3"><i class="bi bi-clock"></i> {{$donasi->tutup}}</h2>
-				<h2 class="utama"><i class="bi bi-clipboard-check"></i> Rp {{$donasi->target_donasi}}</h2>
+				<h2 class="utama"><i class="bi bi-clipboard-check"></i> Rp @money($donasi->target_donasi)</h2>
 			</div>
 		</div>
 		<h4 class="text-utama mb-3">Penggalang Dana</h4>
 		<div class="row bg-sekunder-2 py-4 px-5 mb-5 row-rounded">
 			<div class="col-md-1">
+				@if ( Auth::user()->foto == null)
 				<div class="avatar">
 					<img src="" class="w-100">
 				</div>
+				@else
+				<div>
+					<img src="{{asset('foto_profil/'.$donasi->user->foto)}}" class="avatar">
+				</div>
+				@endif
 			</div>
 			<div class="col-md-11 py-3 px-5">
 				<b class="text-utama fw-normal">{{$donasi->user->name}}</b> <i class="bi bi-patch-check-fill text-success"></i>
@@ -52,7 +58,7 @@
 
 		<div class="text-center mb-5">
 			<h1 class="display-1 fw-bold text-utama">Total Donasi</h1>
-			<h2 class="display-4 fw-bold utama">{{$total->count()}}</h2>
+			<h2 class="display-4 fw-bold utama">{{$donasi->jumlah_donatur}}</h2>
 			<h2 class="display-4 fw-bold text-utama">Orang</h2>
 		</div>
 

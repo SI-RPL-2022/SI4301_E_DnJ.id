@@ -20,6 +20,7 @@
 
     <!-- Style css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css'); }}">
+    <link rel="icon" href="{{ asset('asset/Logo/Logo.png'); }}">
 
     <title>DnJ.id</title>
 </head>
@@ -38,8 +39,8 @@
                 @guest
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="/donasi">Donasi</a>
-                    <a class="nav-link" href="#">Pekerjaan</a>
-                    <a class="nav-link" href="#">Pelatihan</a>
+                    <a class="nav-link" href="/pekerjaan">Pekerjaan</a>
+                    <a class="nav-link" href="/pelatihan">Pelatihan</a>
                     <a class="btn btn-primary" href="/login">Login</a>
                     <a class="btn btn-primary" href="/register">Register</a>
                 </div>
@@ -58,6 +59,10 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/profil">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/testimoni">Testimoni</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

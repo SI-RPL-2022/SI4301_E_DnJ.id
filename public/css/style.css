@@ -409,3 +409,14 @@ a.back-link:hover {
 	margin-top:1rem;
 }
 
+#Testimoni .container{
+	width:50%;
+}
+
+.rounded-profil{
+	border-radius: 300px;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    width: 250px;
+    height: 250px;
+}

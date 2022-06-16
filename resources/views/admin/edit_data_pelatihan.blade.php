@@ -71,6 +71,10 @@
                 </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="link_daftar" class="form-label text-utama fw-bold">Link Pendaftaran</label>
+            <input required type="text" class="form-control" name="link_daftar" id="link_daftar" value="{{$pelatihan->link_daftar}}">
+        </div>
 
         <div class="text-end">
             <button type="submit" class="btn btn-primary">Update</button>

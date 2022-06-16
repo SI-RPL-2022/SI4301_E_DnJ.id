@@ -16,7 +16,7 @@
 			<tr class="">
 				<td class="pe-5">Nominal</td>
 				<td class="px-3">:</td>
-				<td class="ps-2">Rp {{$detail->nominal}}</td>
+				<td class="ps-2">Rp @money($detail->nominal)</td>
 			</tr>
 			<tr class="">
 				<td class="pe-5">Metode Pembayaran</td>

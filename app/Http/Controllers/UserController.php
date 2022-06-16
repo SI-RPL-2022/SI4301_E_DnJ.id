@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Testimoni;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.testimoni');
     }
 
     /**
@@ -36,7 +37,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Testimoni::create([
+            'id_user'=>Auth::user()->id,
+            'testi'=>$request->testi,
+            'status'=>"Pending"
+        ]);
+
+        return redirect('/');
     }
 
     /**
@@ -70,6 +77,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
+        $imgName = $user->img_path;
+        if ($request->img_path){
+            $imgName = $request->img_path->getClientOriginalName() . '-' . time()
+                        . '.' . $request->img_path->extension();
+            $request->img_path->move(public_path('foto_profil'), $imgName);
+        }elseif ($request->img_path == null){
+            $imgName = $pasien -> foto_profil;
+        }
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
@@ -78,7 +95,8 @@ class UserController extends Controller
             User::find($id)->update([
                 'name'=>$request->nama,
                 'email'=>$request->email,
-                'no_hp'=>$request->no_hp
+                'no_hp'=>$request->no_hp,
+                'foto' => $imgName
             ]);
 
             return redirect('/profil');

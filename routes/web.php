@@ -6,6 +6,7 @@ use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\UserController;
 use App\Models\Pelatihan;
+use App\Models\Testimoni;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $testi = Testimoni::all();
+    return view('home',compact('testi'));
 });
 
 //User
@@ -34,11 +36,14 @@ Route::get('/login', 'LoginController@index')->name('login')->middleware('guest'
 Route::post('/login', 'LoginController@loginpersonal');
 Route::post('/loginorganizational', 'LoginController@loginorganizational');
 Route::post('/logout', 'LoginController@logout')->name('logout');
+Route::get('/testimoni', [UserController::class, 'create']);
+Route::post('/testimoni', [UserController::class, 'store']);
 // Donasi
 Route::get('/donasi/berhasil', [donasiController::class, 'selesai']);
-Route::get('/donasi/berhasil/detail', [donasiController::class, 'detail_selesai']);
-Route::get('/donasi/berhasil/detail/id/transaksi', [donasiController::class, 'transaksi']);
-Route::get('/donasi/selesai', [donasiController::class, 'donasi_berhasil']);
+Route::get('/donasi/berhasil/detail/{donasi}', [donasiController::class, 'detail_selesai']);
+Route::get('/donasi/berhasil/detail/{id}/transaksi', [donasiController::class, 'transaksi']);
+Route::put('/donasi/selesai/{id}', [donasiController::class, 'donasi_berhasil']);
+Route::put('/donasi/updateStatus/{id}', [donasiController::class, 'updateStatus']);
 
 Route::resource('/donasi', donasiController::class);
 Route::get('/riwayat', 'donasiController@riwayat');
@@ -46,7 +51,7 @@ Route::get('/donasi/berdonasi/{donasi}', 'donasiController@berdonasi');
 Route::post('/berdonasi/{donasi}', 'donasiController@storePembayaran');
 Route::get('/donasi/detail/{donasi}', 'donasiController@detailBerdonasi');
 Route::get('donasi/pembayaran/{donasi}', 'donasiController@pembayaran');
-Route::put('/pembayaran/{donasi}', 'donasiController@updatePembayaran');
+Route::put('/pembayaran/{donasi}/{id_donasi}', 'donasiController@updatePembayaran');
 
 
 //Pelatihan User
@@ -81,6 +86,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/pekerjaan/edit/{id}', [PekerjaanController::class, 'edit']);
     Route::put('/pekerjaan/edit/{id}', [PekerjaanController::class, 'update']);
     Route::delete('/pekerjaan/delete/{id}', [PekerjaanController::class, 'destroy']);
+
+    // Donasi 
+    Route::get('/riwayat_donasi', [donasiController::class, 'admin_riwayat_donasi']);
+    Route::get('/verifikasi_donasi', [donasiController::class, 'index_verif']);
+    Route::get('/verifikasi_donasi_detail/{id}', [donasiController::class, 'detail_verif']);
+    Route::put('/verifikasi_donasi_approve/{id}', [donasiController::class, 'approve']);
 });
 
 // Route::get('/login', [LoginController::class, 'index']);

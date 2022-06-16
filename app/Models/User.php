@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'no_hp',
         'roles',
+        'foto',
         'email',
         'password',
     ];
@@ -52,5 +53,9 @@ class User extends Authenticatable
     public function bayar()
     {
         return $this->hasMany(pembayaran::class);
+    }
+    public function testi()
+    {
+        return $this->hasMany(Testimoni::class,'id_user');
     }
 }

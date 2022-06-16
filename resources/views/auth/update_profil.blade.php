@@ -10,14 +10,24 @@
         </div>
         @endif
         <h1 class="fw-bold">Profile</h1>
-        <div class="row">
-            <div class="col-sm-6">
-                <img class="rounded-profil" src="{{asset('asset/ilustrasi/profil.jpg')}}">
-            </div>
-            <div class="col-sm-6">
-                <form action="/profil/update/{{Auth::user()->id}}" method="POST">
-                    @csrf
-                    @method('PUT')
+        <form action="/profil/update/{{Auth::user()->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="row">
+                <div class="col-sm-6">
+                    @if ( Auth::user()->foto == null)
+                    <img class="rounded-profil" src="{{asset('asset/ilustrasi/profil.jpg')}}">
+                    @else
+                    <img class="rounded-profil" src="{{asset('foto_profil/'.Auth::user()->foto)}}">
+                    @endif
+                    <div class="row">
+                        <label>
+                            <input type="file" style="display: none;" name="img_path">
+                            <p style="margin-left:5rem; color:rgba(0, 0, 0, 0.5);"><u>Upload Foto</u></p>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
                     <p class="title">Nama</p>
                     <input type="text" class="form-control" id="nama" name="nama" value="{{Auth::user()->name}}">
                     <p class="title">Email</p>
@@ -27,9 +37,10 @@
                     <p class="title">Password</p>
                     <input type="password" class="form-control" id="password" name="password">
                     <button class="btn btn-primary" type="submit">Edit</button>
-                </form>
+                </div>
+
             </div>
-        </div>
+        </form>
     </div>
 </section>
 @endsection

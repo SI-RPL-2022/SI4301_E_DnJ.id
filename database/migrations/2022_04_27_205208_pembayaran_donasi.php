@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_donasi');
             $table->foreignId('id_donatur');
-            $table->string('nominal');
+            $table->bigInteger('nominal');
             $table->string('metode_pembayaran');
             $table->string('bukti_pembayaran')->nullable();
             $table->timestamp('tanggal_pembayaran')->nullable();

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('tutup');
             $table->string('target_donasi');
             $table->string('foto');
-            $table->integer('total_donasi');
+            $table->Biginteger('total_donasi');
             $table->integer('jumlah_donatur');
             $table->string('status');
             $table->timestamps();

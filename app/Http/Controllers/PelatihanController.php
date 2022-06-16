@@ -117,7 +117,8 @@ class PelatihanController extends Controller
             'tipe' => $request->tipe,
             'link' => $request->link,
             'alamat' => $request->alamat,
-            'contact' => $request->contact
+            'contact' => $request->contact,
+            'link_daftar' => $request->link_daftar
         ]);
         return redirect('/admin/pelatihan');
     }

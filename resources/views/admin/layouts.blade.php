@@ -20,6 +20,7 @@
 
     <!-- Style css -->
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/style.css'); }}">
+    <link rel="icon" href="{{ asset('asset/Logo/Logo.png'); }}">
 
     <title>Admin DnJ.id</title>
 </head>
@@ -39,8 +40,9 @@
                             <li><a href="/admin/dashboard" class="sidebar-link">Dashboard</a></li>
                             <li>Donasi
                                 <ul class="list-unstyled ps-4 fs-6">
-                                    <li>Riwayat Donasi</li>
+                                    <li><a href="/admin/riwayat_donasi" class="sidebar-link">Riwayat Donasi</a></li>
                                     <li>Cetak Donasi</li>
+                                    <li><a href="/admin/verifikasi_donasi" class="sidebar-link">Verifikasi Donasi</a></li>
                                 </ul>
                             </li>
                             <li>Pekerjaan

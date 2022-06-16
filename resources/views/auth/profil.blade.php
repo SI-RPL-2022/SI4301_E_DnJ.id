@@ -6,7 +6,11 @@
         <h1 class="fw-bold">Profile</h1>
         <div class="row">
             <div class="col-sm-6">
+                @if ( Auth::user()->foto == null)
                 <img class="rounded-profil" src="{{asset('asset/ilustrasi/profil.jpg')}}">
+                @else
+                <img class="rounded-profil" src="{{asset('foto_profil/'.Auth::user()->foto)}}">
+                @endif
             </div>
             <div class="col-sm-6">
                 <p class="title">Nama</p>

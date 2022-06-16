@@ -17,7 +17,7 @@
 				<p class="utama mb-0"><i class="bi bi-activity pe-3"></i>{{$p->status}}</p>
 			</div>
 			<div class="col-md-4 text-end">
-				<h4 class="fw-bold utama mb-4">Rp {{$p->donasi->target_donasi}}</h4>
+				<h4 class="fw-bold utama mb-4">Rp @money($p->donasi->target_donasi)</h4>
 				<a href="/donasi/pembayaran/{{$p->id}}" class="btn btn-primary ">Bayar</a>
 			</div>
 			@endforeach
@@ -41,7 +41,7 @@
 				<p class="utama mb-0"><i class="bi bi-activity pe-3"></i>{{$r->status}}</p>
 			</div>
 			<div class="col-md-4 text-end">
-				<h4 class="fw-bold utama mb-4">Rp {{$r->donasi->target_donasi}}</h4>
+				<h4 class="fw-bold utama mb-4">Rp @money($r->donasi->target_donasi)</h4>
 				<a href="/donasi/detail/{{$r->id}}" class="btn btn-primary ">Detail</a>
 			</div>
 			@endforeach
