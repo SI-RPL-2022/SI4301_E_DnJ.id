@@ -18,7 +18,7 @@
                     </li>
                     <li class="nav-item text-center">
                         <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-                            role="tab" aria-controls="pills-profile" aria-selected="false">Login as Organizational User</a>
+                            role="tab" aria-controls="pills-profile" aria-selected="true">Login as Organizational User</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
@@ -28,10 +28,10 @@
                             @csrf
                             <div class="form px-4">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" name="email" name="no_hp" class="form-control"
+                                <input type="text" id="email" name="email" class="form-control"
                                     placeholder="Email">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                 <button class="btn btn-primary btn-block center" type="submit">Login</button>
                                 <p>Belum punya akun?<a href="/register" class="fw-bold nostyle">Register</a></p>
                             </div>
@@ -42,10 +42,10 @@
                             @csrf
                             <div class="form px-4">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" name="email" name="no_hp" class="form-control"
+                                <input type="text" id="email" name="email" class="form-control"
                                     placeholder="Email">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                 <button class="btn btn-primary btn-block" type="submit">Login</button>
                                 <p>Belum punya akun?<a href="/register" class="fw-bold nostyle">Register</a></p>
                             </div>

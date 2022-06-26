@@ -9,7 +9,6 @@ class Donations extends Model
 {
     protected $primaryKey = 'id';
     protected $table = "donations";
-    public $timestamps = false;
     protected $fillable = [
         'id',
         'id_penggalang', 

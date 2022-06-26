@@ -35,15 +35,21 @@
         <textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" required
             readonly>{{$unverif->deskripsi}}</textarea>
     </div>
+    @if ($unverif->status == "Approved:OnGoing")
+    <div class="text-end">
+        <a href="/admin/riwayat_donasi" class="btn btn-primary">Kembali</a>
+    </div>
+    @else
     <form action="/admin/verifikasi_donasi_approve/{{$unverif->id}}" method="POST">
         @csrf
         @METHOD('PUT')
         <div class="text-end">
-            <a href="/admin/verifikasi_donasi" class="btn btn-primary">Kembali</a>
+            <a href="/admin/riwayat_donasi" class="btn btn-primary">Kembali</a>
             <button type="submit" class="btn btn-success">Approve</button>
             <button type="reset" class="btn btn-danger">Reject</button>
         </div>
     </form>
+    @endif
 </div>
 
 @endsection

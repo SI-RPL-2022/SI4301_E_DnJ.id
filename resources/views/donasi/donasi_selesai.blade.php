@@ -4,11 +4,12 @@
 <section id="Donasi">
     <div class="container min-vh-100 py-5">
         <div class="mb-2">
-            <a href="/donasi" class="back-link"><i class="bi bi-arrow-left"></i></a><b class="subtitle">Daftar Donasi Yang Diselenggarakan</b>
+            <a href="/donasi" class="back-link"><i class="bi bi-arrow-left"></i></a><b class="subtitle">Daftar Donasi
+                Yang Diselenggarakan</b>
         </div>
         <table class="table table-striped">
+            @foreach ($donasi as $d)
             <tr>
-                @foreach ($donasi as $d)
                 <td>
                     <div class="row mx-3">
                         <div class="col-md-2 ps-5">
@@ -26,8 +27,9 @@
                         </div>
                     </div>
                 </td>
-                @endforeach
+
             </tr>
+            @endforeach
         </table>
     </div>
 </section>

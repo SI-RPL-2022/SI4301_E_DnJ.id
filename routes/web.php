@@ -72,9 +72,11 @@ Route::get('/pekerjaan/detail/{id}', [PekerjaanController::class, 'show']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    // Route::get('/dashboard', function () {
+    //     return view('admin.dashboard');
+    // });
+
+    Route::get('/dashboard', [donasiController::class, 'index_admin']);
 
     // Pelatihan
     Route::get('/pelatihan', [PelatihanController::class, 'daftar']);

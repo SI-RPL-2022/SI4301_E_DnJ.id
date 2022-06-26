@@ -20,10 +20,12 @@
 		<h4 class="text-utama mb-3">Penggalang Dana</h4>
 		<div class="row bg-sekunder-2 py-4 px-5 mb-5 row-rounded">
 			<div class="col-md-1">
+				@if (session('login'))
 				@if ( Auth::user()->foto == null)
 				<div class="avatar">
 					<img src="" class="w-100">
 				</div>
+				@endif
 				@else
 				<div>
 					<img src="{{asset('foto_profil/'.$donasi->user->foto)}}" class="avatar">

@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Donations;
 use App\Models\pembayaran;
 use App\Models\User;
+use App\Models\Pekerjaan;
+use App\Models\Pelatihan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class donasiController extends Controller
 {
@@ -233,5 +236,14 @@ class donasiController extends Controller
         $donasi = Donations::all();
 
         return view('admin.riwayatdonasi',compact('donasi'));
+    }
+
+    public function index_admin(){
+        $total_donasi = pembayaran::select(DB::raw("CAST(SUM(nominal) as int) as nominal"))->groupBy(DB::raw("Month(updated_at)"))->pluck('nominal');
+        $bulan = pembayaran::select(DB::raw("MONTHNAME(updated_at) as bulan"))->groupBy(DB::raw("MONTHNAME(updated_at)"))->pluck("bulan");
+        $donasi = Donations::all();
+        $pekerjaan = Pekerjaan::all();
+        $pelatihan = Pelatihan::all();
+        return view("admin.dashboard",compact('total_donasi','bulan','donasi','pekerjaan','pelatihan'));
     }
 }

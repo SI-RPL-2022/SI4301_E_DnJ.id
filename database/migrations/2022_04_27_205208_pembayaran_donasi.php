@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('bukti_pembayaran')->nullable();
             $table->timestamp('tanggal_pembayaran')->nullable();
             $table->string('status');
+            $table->timestamps();
             
             $table->foreign('id_donasi')->references('id')->on('donations');
             $table->foreign('id_donatur')->references('id')->on('users');

@@ -9,7 +9,6 @@ class pembayaran extends Model
 {
     protected $primaryKey = 'id';
     protected $table = "pembayaran_donasi";
-    public $timestamps = false;
     protected $fillable = [
         'id',
         'id_donasi', 
