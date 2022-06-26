@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Testimoni::class,'id_user');
     }
+
+    public function keluhan()
+    {
+        return $this->hasMany(Keluhan::class);
+    }
 }

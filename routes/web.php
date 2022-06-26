@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\donasiController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KeluhanController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\UserController;
@@ -38,6 +39,10 @@ Route::post('/loginorganizational', 'LoginController@loginorganizational');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::get('/testimoni', [UserController::class, 'create']);
 Route::post('/testimoni', [UserController::class, 'store']);
+
+Route::get('/keluhan',[KeluhanController::class,'index']);
+Route::post('/kirim/keluhan',[KeluhanController::class,'kirim']);
+
 // Donasi
 Route::get('/donasi/berhasil', [donasiController::class, 'selesai']);
 Route::get('/donasi/berhasil/detail/{donasi}', [donasiController::class, 'detail_selesai']);
@@ -92,6 +97,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/verifikasi_donasi', [donasiController::class, 'index_verif']);
     Route::get('/verifikasi_donasi_detail/{id}', [donasiController::class, 'detail_verif']);
     Route::put('/verifikasi_donasi_approve/{id}', [donasiController::class, 'approve']);
+
+    //Keluahan
+    Route::get('/keluhan',[KeluhanController::class,'admin']);
+    Route::get('/keluhan/{id}',[KeluhanController::class,'admin_keluhan']);
+    Route::post('/keluhan/respon/{id}',[KeluhanController::class,'respon']);
 });
 
 // Route::get('/login', [LoginController::class, 'index']);

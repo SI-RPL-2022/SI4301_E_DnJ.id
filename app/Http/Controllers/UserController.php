@@ -84,7 +84,7 @@ class UserController extends Controller
                         . '.' . $request->img_path->extension();
             $request->img_path->move(public_path('foto_profil'), $imgName);
         }elseif ($request->img_path == null){
-            $imgName = $pasien -> foto_profil;
+            $imgName = $user -> foto_profil;
         }
 
         $credentials = $request->validate([

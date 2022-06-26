@@ -49,6 +49,7 @@
                     <a class="nav-link" href="/donasi">Donasi</a>
                     <a class="nav-link" href="/pekerjaan">Pekerjaan</a>
                     <a class="nav-link" href="/pelatihan">Pelatihan</a>
+                    <a class="nav-link" href="/keluhan">Keluhan</a>
                 </div>
 
                 <li class="nav-item dropdown" style="list-style:none;">

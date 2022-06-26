@@ -57,6 +57,7 @@
                                     <li>Mitra Peltahian</li>
                                 </ul>
                             </li>
+                            <li><a href="/admin/keluhan" class="sidebar-link">Keluhan</a></li>
                         </ul>
                     </div>
                     <div class="text-center">
